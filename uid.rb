@@ -4,15 +4,14 @@
 class Uid < Formula
   desc "Unique ID generator"
   homepage "https://github.com/JonDotsoy/uid"
-  url "https://api.github.com/repos/JonDotsoy/uid/tarball/v1.1.1-beta"
-  sha256 "a82db2451586a238d6504181ed1c38695da6044f24338c54a7ddda9248866199"
+  url "https://api.github.com/repos/JonDotsoy/uid/tarball/v1.1.1-beta.2"
+  sha256 "1d08251d1b944349c9bcea111e47c3fa8d0a3392da2267c134d2a8b29a6c01a9"
   license "MIT"
 
-  depends_on "oven-sh/bun/bun"
+  depends_on "deno"
 
   def install
-    system "bun", "i"
-    system "bun", "build", "--compile", "uid.ts", "--outfile", "uid"
+    system "deno","compile","-o","uid","uid.ts"
     bin.install "uid" => "uid"
   end
 
