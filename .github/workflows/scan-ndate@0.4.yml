@@ -1,0 +1,53 @@
+name: Scan new version to ndate@0.4
+
+on: workflow_dispatch
+
+jobs:
+    search:
+        name: 🔎 Search
+        runs-on: ubuntu-latest
+        permissions:
+            pull-requests: write
+            contents: write
+
+        steps:
+            - uses: actions/checkout@v4
+            - run: gh api repos/jondotsoy/ndate/releases > res.json
+              env:
+                GH_TOKEN: ${{ github.token }}
+            - run: jq 'map(. | select(.tag_name | startswith("morgan-v0.4"))) | .[0]' res.json > release.json
+            - run: cat release.json
+            - run: curl -L $(jq '.tarball_url' release.json) | shasum -a 256 | cut -d " " -f 1 > tarball_hash.txt
+            - run: TARBALL_HASH=$(cat tarball_hash.txt) jq '.tarball_hash = $ENV.TARBALL_HASH' release.json > release-hashed.json
+            - name: ⚙️ Make formlulae
+              run: |
+                cat > ndate@0.4.rb << EOL
+                class NdateAT04 < Formula
+                  desc "Date format to console"
+                  homepage "https://github.com/JonDotsoy/ndate/tree/morgan-v0.4.1#readme"
+                  url "$(jq '.tarball_url' -r release-hashed.json)"
+                  sha256 "$(jq '.tarball_hash' -r release-hashed.json)"
+                  license "MIT"
+                
+                  depends_on "deno"
+                
+                  def install
+                    system "deno", "compile", "--allow-env=TZ,LANG", "ndate.ts"
+                    bin.install "ndate" => "ndate"
+                  end
+                
+                  test do
+                    system "false"
+                  end
+                end
+                EOL
+            - run: |
+                git config --local user.name 'github-actions[bot]'
+                git config --local user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+            - run: git add ndate@0.4.rb && git status
+            - run: git branch -f feature/ndate@0.4 && git switch feature/ndate@0.4
+            - run: |
+                git commit -m "feat: upgrade formulae ndate@0.4"
+
+            - run: git push -f -u origin feature/ndate@0.4
