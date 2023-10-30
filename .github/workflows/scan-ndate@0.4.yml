@@ -17,7 +17,7 @@ jobs:
                 GH_TOKEN: ${{ github.token }}
             - run: jq 'map(. | select(.tag_name | startswith("morgan-v0.4"))) | .[0]' res.json > release.json
             - run: cat release.json
-            - run: curl -L $(jq '.tarball_url' release.json) | shasum -a 256 | cut -d " " -f 1 > tarball_hash.txt
+            - run: curl -L $(jq '.tarball_url' release.json -r) | shasum -a 256 | cut -d " " -f 1 > tarball_hash.txt
             - run: TARBALL_HASH=$(cat tarball_hash.txt) jq '.tarball_hash = $ENV.TARBALL_HASH' release.json > release-hashed.json
             - name: ⚙️ Make formlulae
               run: |
