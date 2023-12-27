@@ -4,8 +4,8 @@
 class Uid < Formula
   desc "Unique ID generator"
   homepage "https://github.com/JonDotsoy/uid"
-  url "https://api.github.com/repos/JonDotsoy/uid/tarball/v1.3.0"
-  sha256 "a49e08f59c3d8f84b45d49f3d4c0f08b80c78fa7c960191478fff52b8dc2b6fe"
+  url "https://api.github.com/repos/JonDotsoy/uid/tarball/v1.4.1"
+  sha256 "ec3d8aa49e75d608c1b661f784593279be993abe6bd4b54ecb6473ebacc26f6b"
   license "MIT"
 
   depends_on "bun"
