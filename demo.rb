@@ -1,8 +1,8 @@
 class Demo < Formula
   desc "Date format to console"
-  homepage "https://github.com/JonDotsoy/demo/tree/v1.1.0#readme"
-  url "https://api.github.com/repos/JonDotsoy/demo/tarball/v1.1.0"
-  sha256 "dd83b9ab1bd20fce0872689ffab5f6672731b9f4bd295dcebd0fa72d2fb02dd9"
+  homepage "https://github.com/JonDotsoy/demo/tree/v1.2.0#readme"
+  url "https://api.github.com/repos/JonDotsoy/demo/tarball/v1.2.0"
+  sha256 "1569fc512320b38cd360c8dc84effb0350dd91b83a3d1e99461986ade19a7f34"
   license "MIT"
 
   depends_on "bun"
