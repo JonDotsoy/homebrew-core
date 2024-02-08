@@ -1,0 +1,9 @@
+formules:
+  - name: envctl
+    template: bun_make
+    source:
+      type: github
+      username: jondotsoy
+      repository: envctl
+      branch: develop
+    strategy: lastCommit

@@ -1,0 +1,21 @@
+class {{className}} < Formula
+  desc "Date format to console"
+  homepage "{{homePage}}"
+  url "{{sourceDownload}}"
+  sha256 "{{digestHex}}"
+  license "MIT"
+  version "{{versionName}}"
+
+  depends_on "bun"
+  depends_on "make"
+
+  def install
+    system "bun", "install"
+    system "make", "build"
+    bin.install "dist/envctl" => "envctl"
+  end
+
+  test do
+    system "false"
+  end
+end
