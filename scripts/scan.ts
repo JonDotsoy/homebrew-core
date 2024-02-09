@@ -63,6 +63,8 @@ for (const formule of manifest.formules ?? []) {
     `/repos/${formule.source.username}/${formule.source.repository}/tarball/${sha}`,
   );
 
+  const description = formule.description
+  const license = formule.license
   const digest = await crypto.subtle.digest("sha256", buff);
   const digestHex = Array.from(new Uint8Array(digest), (e) =>
     e.toString(16).padStart(2, "0"),
@@ -75,6 +77,8 @@ for (const formule of manifest.formules ?? []) {
   await writeFile(
     formuleDestination,
     handlebars.compile(template)({
+      description,
+      license,
       className,
       homePage,
       sourceDownload,

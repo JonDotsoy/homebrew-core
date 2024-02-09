@@ -12,6 +12,8 @@ export const schema = object({
   formules: array(
     object({
       name: string().regex(/^\w+(?:\w-)*$/),
+      description: string(),
+      license: string(),
       template: literal("bun_make").transform(() => templates.bunMake),
       source: object({
         type: literal("github"),

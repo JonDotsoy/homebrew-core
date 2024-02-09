@@ -1,5 +1,7 @@
 formules:
   - name: envctl
+    description: Manager many environment files (.env.<ctx>) so easy.
+    license: MIT
     template: bun_make
     source:
       type: github

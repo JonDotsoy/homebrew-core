@@ -13,6 +13,12 @@
                 "type": "string",
                 "pattern": "^\\w+(?:\\w-)*$"
               },
+              "description": {
+                "type": "string"
+              },
+              "license": {
+                "type": "string"
+              },
               "template": {
                 "type": "string",
                 "const": "bun_make"
@@ -29,9 +35,17 @@
                   },
                   "repository": {
                     "type": "string"
+                  },
+                  "branch": {
+                    "type": "string"
                   }
                 },
-                "required": ["type", "username", "repository"],
+                "required": [
+                  "type",
+                  "username",
+                  "repository",
+                  "branch"
+                ],
                 "additionalProperties": false
               },
               "strategy": {
@@ -39,7 +53,14 @@
                 "const": "lastCommit"
               }
             },
-            "required": ["name", "template", "source", "strategy"],
+            "required": [
+              "name",
+              "description",
+              "license",
+              "template",
+              "source",
+              "strategy"
+            ],
             "additionalProperties": false
           }
         }
