@@ -1,10 +1,10 @@
 class Envctl < Formula
   desc "Date format to console"
   homepage "https://github.com/jondotsoy/envctl/tree/develop#readme"
-  url "https://api.github.com/repos/jondotsoy/envctl/tarball/4b56b74faa59dfa29a6b77f7d40f5205ca775dc0"
-  sha256 "681b9e6a38be0388d9ac403851abea4fa29dfeea339b974df6b990e20cbb7b61"
+  url "https://api.github.com/repos/jondotsoy/envctl/tarball/997dd88b6ee37b8b4eab98782084435cb24f7c50"
+  sha256 "9033f6b00603326b343a771baef2afd3d17b1ee6475ed40fd37f751b5485e552"
   license "MIT"
-  version "0.1.0-prev.20cbb7b61"
+  version "0.1.0-prev.b5485e552"
 
   depends_on "bun"
   depends_on "make"
