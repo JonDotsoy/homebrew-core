@@ -1,5 +1,5 @@
 class Envctl < Formula
-  desc "Date format to console"
+  desc "Manager many environment files (.env.&lt;ctx&gt;) so easy."
   homepage "https://github.com/jondotsoy/envctl/tree/develop#readme"
   url "https://api.github.com/repos/jondotsoy/envctl/tarball/997dd88b6ee37b8b4eab98782084435cb24f7c50"
   sha256 "9033f6b00603326b343a771baef2afd3d17b1ee6475ed40fd37f751b5485e552"
