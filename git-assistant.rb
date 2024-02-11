@@ -2,11 +2,11 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class GitAssistant < Formula
-    desc "Make messages with AI. (use `git assistant init` in your project)"
+    desc "Make commits messages with AI. (use `git assistant init` in your project)"
     homepage "https://github.com/JonDotsoy/commands-help/tree/develop/commands/git-tools#readme"
-    url "https://api.github.com/repos/jondotsoy/commands-help/tarball/git-assistant-v0.2.0"
-    version "v0.2.0"
-    sha256 "f435ea41a5ae45448beff80d5abff0181f7947231be92a4b4bfc15a434c0603d"
+    url "https://api.github.com/repos/jondotsoy/commands-help/tarball/git-assistant-v0.3.0"
+    version "v0.3.0"
+    sha256 "56e5748b93ba2d7bb2ed9e75f8c0c3469da6a96657d33b1e26a6bb9596d4f3fd"
     license "MIT"
   
     depends_on "bun"
