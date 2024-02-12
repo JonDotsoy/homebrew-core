@@ -4,9 +4,9 @@
 class GitAssistant < Formula
     desc "Make commits messages with AI. (use `git assistant init` in your project)"
     homepage "https://github.com/JonDotsoy/commands-help/tree/develop/commands/git-tools#readme"
-    url "https://api.github.com/repos/jondotsoy/commands-help/tarball/git-assistant-v0.4.0"
-    version "v0.4.0"
-    sha256 "2674f6150086d09c4b6bb4d515e717f228bec5d0789ec378d7f5af6d679f80d1"
+    url "https://api.github.com/repos/jondotsoy/commands-help/tarball/git-assistant-v0.5.0"
+    version "v0.5.0"
+    sha256 "e2559a7d06ced66ac44b103976bb932235dba05f9de95c1fea06d299bb8d5827"
     license "MIT"
   
     depends_on "bun"
