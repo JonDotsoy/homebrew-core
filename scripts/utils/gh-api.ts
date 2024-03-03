@@ -12,7 +12,11 @@ const ghApiCall = (...args: string[]) => {
   return subProcess;
 };
 
-export const ghApi = async (...args: string[]) => {
+type A<T> = T extends [`/repos/${string}/${string}/releases`]
+  ? { target_commitish: string; name: string; tarball_url: string }[]
+  : any;
+
+export const ghApi = async <T extends string[]>(...args: T): Promise<A<T>> => {
   const subProcess = ghApiCall(...args);
 
   return await readableStreamToJSON(subProcess.stdout);
