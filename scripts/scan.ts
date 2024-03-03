@@ -14,22 +14,19 @@ const manifest = await loadManifest(formulesLocation);
 for (const formule of manifest.formules ?? []) {
   const className = normalizeClassName(formule.name);
   const formuleDestination = new URL(`../${formule.name}.rb`, import.meta.url);
-  const out = await ghApi(
-    `/repos/${formule.source.username}/${formule.source.repository}/commits/${formule.source.branch}`,
+  const releases = await ghApi(
+    `/repos/${formule.source.username}/${formule.source.repository}/releases`,
   );
 
-  const sha = out.sha;
+  const release = releases.at(0);
+
+  if (!release) continue;
 
   const homePage = new URL(
     `https://github.com/${formule.source.username}/${formule.source.repository}/tree/${formule.source.branch}#readme`,
   );
-  const sourceDownload = new URL(
-    `/repos/${formule.source.username}/${formule.source.repository}/tarball/${sha}`,
-    `https://api.github.com`,
-  );
-  const buff = await ghApiStream(
-    `/repos/${formule.source.username}/${formule.source.repository}/tarball/${sha}`,
-  );
+  const sourceDownload = new URL(release.tarball_url);
+  const buff = await (await fetch(sourceDownload)).arrayBuffer();
 
   const description = formule.description;
   const license = formule.license;
@@ -40,7 +37,7 @@ for (const formule of manifest.formules ?? []) {
   const template = new TextDecoder().decode(
     new Uint8Array(await readFile(formule.template)),
   );
-  const versionName = `0.1.0-prev.${digestHex.substring(digestHex.length - 9)}`;
+  const versionName = release.name;
 
   await writeFile(
     formuleDestination,
