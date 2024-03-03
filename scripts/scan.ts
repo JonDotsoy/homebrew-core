@@ -3,48 +3,16 @@ import { writeFile, readFile } from "fs/promises";
 import { schema } from "./schema";
 import { readableStreamToArrayBuffer, readableStreamToJSON } from "bun";
 import handlebars from "handlebars";
-
-const ghApiStream = async (...args: string[]) => {
-  const cmd = ["gh", "api", "--cache", "1h", ...args];
-  console.log(`> Call ${cmd.join(" ")}`);
-  const subProcess = Bun.spawn({
-    cmd,
-    stdout: "pipe",
-    stderr: "pipe",
-  });
-
-  return await readableStreamToArrayBuffer(subProcess.stdout);
-};
-
-const ghApi = async (...args: string[]) => {
-  const cmd = ["gh", "api", "--cache", "1h", ...args];
-  console.log(`> Call ${cmd.join(" ")}`);
-  const subProcess = Bun.spawn({
-    cmd,
-    stdout: "pipe",
-    stderr: "pipe",
-  });
-
-  return await readableStreamToJSON(subProcess.stdout);
-};
+import { normalizeClassName } from "./utils/classname";
+import { loadManifest } from "./utils/manifest";
+import { ghApi, ghApiStream } from "./utils/gh-api";
 
 const formulesLocation = new URL("../formulues.yaml", import.meta.url);
 
-const manifest = schema.parse(
-  YAML.parse(
-    new TextDecoder().decode(new Uint8Array(await readFile(formulesLocation))),
-  ),
-);
-
-const toClassName = (name: string) => {
-  return name
-    .split(/-/g)
-    .map((chunk) => `${chunk[0].toUpperCase()}${chunk.substring(1)}`)
-    .join("");
-};
+const manifest = await loadManifest(formulesLocation);
 
 for (const formule of manifest.formules ?? []) {
-  const className = toClassName(formule.name);
+  const className = normalizeClassName(formule.name);
   const formuleDestination = new URL(`../${formule.name}.rb`, import.meta.url);
   const out = await ghApi(
     `/repos/${formule.source.username}/${formule.source.repository}/commits/${formule.source.branch}`,
@@ -63,8 +31,8 @@ for (const formule of manifest.formules ?? []) {
     `/repos/${formule.source.username}/${formule.source.repository}/tarball/${sha}`,
   );
 
-  const description = formule.description
-  const license = formule.license
+  const description = formule.description;
+  const license = formule.license;
   const digest = await crypto.subtle.digest("sha256", buff);
   const digestHex = Array.from(new Uint8Array(digest), (e) =>
     e.toString(16).padStart(2, "0"),
