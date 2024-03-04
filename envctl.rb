@@ -1,10 +1,10 @@
 class Envctl < Formula
   desc "Manager many environment files (.env.&lt;ctx&gt;) so easy."
   homepage "https://github.com/jondotsoy/envctl/tree/develop#readme"
-  url "https://api.github.com/repos/JonDotsoy/envctl/tarball/v1.0.1"
-  sha256 "8695406ae1d17b292ea3e284dadb56aea7136187f7dc7a58ab1d631cdb1a6f7f"
+  url "https://api.github.com/repos/JonDotsoy/envctl/tarball/v1.1.0"
+  sha256 "1aa30f04bc15f08f015f4f7b0bc760eb9edac1b62ae26b7b6008eb2a96240e27"
   license "MIT"
-  version "v1.0.1"
+  version "v1.1.0"
 
   depends_on "bun"
   depends_on "make"
