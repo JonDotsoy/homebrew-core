@@ -11,7 +11,7 @@
             "properties": {
               "name": {
                 "type": "string",
-                "pattern": "^\\w+(?:\\w-)*$"
+                "pattern": "^\\w+(?:\\w|-)*$"
               },
               "description": {
                 "type": "string"
@@ -38,6 +38,10 @@
                   },
                   "branch": {
                     "type": "string"
+                  },
+                  "workspace": {
+                    "type": "string",
+                    "pattern": "^\\.\\/"
                   }
                 },
                 "required": [

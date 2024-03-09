@@ -11,7 +11,7 @@ const templates = {
 export const schema = object({
   formules: array(
     object({
-      name: string().regex(/^\w+(?:\w-)*$/),
+      name: string().regex(/^\w+(?:\w|-)*$/),
       description: string(),
       license: string(),
       template: literal("bun_make").transform(() => templates.bunMake),
@@ -20,6 +20,7 @@ export const schema = object({
         username: string(),
         repository: string(),
         branch: string(),
+        workspace: string().startsWith('./').endsWith('/').optional(),
       }),
       strategy: literal("lastCommit"),
     }),
