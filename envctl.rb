@@ -6,7 +6,7 @@ class Envctl < Formula
   license "MIT"
   version "v1.2.1"
 
-  depends_on "bun"
+  depends_on "oven-sh/bun/bun"
   depends_on "make"
 
   def install
