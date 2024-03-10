@@ -9,7 +9,7 @@ class GitAssistant < Formula
     sha256 "ccb774fdbdd7b1bd8aeb07349ae4603f79f9cd98ab09b4fa04e0c84acdfa9db7"
     license "MIT"
   
-    depends_on "bun"
+    depends_on "oven-sh/bun/bun"
     depends_on "make"
   
     def install
