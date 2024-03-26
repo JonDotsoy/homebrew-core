@@ -1,0 +1,21 @@
+class {{className}} < Formula
+  desc "{{description}}"
+  homepage "{{homePage}}"
+  url "{{sourceDownload}}"
+  sha256 "{{digestHex}}"
+  license "{{license}}"
+  version "{{versionName}}"
+
+  depends_on "oven-sh/bun/bun"
+  depends_on "make"
+
+  def install
+    system "bun", "install"
+    system "make", "build"
+    bin.install "dist/spec-md" => "spec-md"
+  end
+
+  test do
+    system "false"
+  end
+end

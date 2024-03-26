@@ -1,10 +1,10 @@
 class SpecMd < Formula
   desc "Documentation first methodology for writing tests."
   homepage "https://github.com/jondotsoy/spec.md/tree/develop#readme"
-  url "https://api.github.com/repos/JonDotsoy/spec.md/tarball/v0.1.0"
-  sha256 "c679a33c6457b9426098dc9a5dc968537677ed8841678565eb9f935c548252c7"
+  url "https://api.github.com/repos/JonDotsoy/spec.md/tarball/v0.1.1"
+  sha256 "cda808ede0ae4e3c0582db2ba9f4751a38818b882b8447c5235f95f75178ab25"
   license "MIT"
-  version "v0.1.0"
+  version "v0.1.1"
 
   depends_on "oven-sh/bun/bun"
   depends_on "make"
@@ -12,7 +12,7 @@ class SpecMd < Formula
   def install
     system "bun", "install"
     system "make", "build"
-    bin.install "dist/envctl" => "envctl"
+    bin.install "dist/spec-md" => "spec-md"
   end
 
   test do

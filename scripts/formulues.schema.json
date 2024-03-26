@@ -20,8 +20,16 @@
                 "type": "string"
               },
               "template": {
-                "type": "string",
-                "const": "bun_make"
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "bun_make"
+                  },
+                  {
+                    "type": "string",
+                    "const": "bun_make_spec_md"
+                  }
+                ]
               },
               "source": {
                 "type": "object",
@@ -41,7 +49,14 @@
                   },
                   "workspace": {
                     "type": "string",
-                    "pattern": "^\\.\\/"
+                    "allOf": [
+                      {
+                        "pattern": "^\\.\\/"
+                      },
+                      {
+                        "pattern": "\\/$"
+                      }
+                    ]
                   }
                 },
                 "required": [
