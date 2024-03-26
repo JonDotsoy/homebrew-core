@@ -9,3 +9,13 @@ formules:
       repository: envctl
       branch: develop
     strategy: lastCommit
+  - name: spec-md
+    description: Documentation first methodology for writing tests.
+    license: MIT
+    template: bun_make
+    source:
+      type: github
+      username: jondotsoy
+      repository: spec.md
+      branch: develop
+    strategy: lastCommit
