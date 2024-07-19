@@ -1,0 +1,21 @@
+class SpecMd < Formula
+  desc "{{ repo.description }}"
+  homepage "{{ repo.html_url }}#readme"
+  url "{{ release.tarball_url }}"
+  sha256 "{{ digest }}"
+  license "{{ repo.license.spdx_id }}"
+  version "{{ release.tag_name }}"
+
+  depends_on "oven-sh/bun/bun"
+  depends_on "make"
+
+  def install
+    system "bun", "install"
+    system "make", "build"
+    bin.install "dist/spec-md" => "spec-md"
+  end
+
+  test do
+    system "false"
+  end
+end
