@@ -1,10 +1,10 @@
 class SpecMd < Formula
   desc "Documentation first methodology for writing tests."
-  homepage "https://github.com/jondotsoy/spec.md/tree/develop#readme"
-  url "https://api.github.com/repos/JonDotsoy/spec.md/tarball/v0.1.1"
-  sha256 "cda808ede0ae4e3c0582db2ba9f4751a38818b882b8447c5235f95f75178ab25"
+  homepage "https://github.com/JonDotsoy/specmark#readme"
+  url "https://api.github.com/repos/JonDotsoy/specmark/tarball/v0.2.5"
+  sha256 "4e94ff1e82f8116aa0ac07bc3b33914a8332fa8257d491af45d34a4bd306ebea"
   license "MIT"
-  version "v0.1.1"
+  version "v0.2.5"
 
   depends_on "oven-sh/bun/bun"
   depends_on "make"
