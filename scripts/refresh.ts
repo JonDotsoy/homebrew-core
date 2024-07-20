@@ -1,15 +1,16 @@
 #!/usr/bin/env bun
 
 import { GhApi } from "./utils/gh-api";
+import { appendFile } from "node:fs/promises";
 import Handlebars from "handlebars";
 import { digestFile } from "./utils/digest-file-url";
 
 
-const setOutput = (name: string, variable: string) => {
+const setOutput = async (name: string, variable: string) => {
     const GITHUB_OUTPUT = process.env.GITHUB_OUTPUT;
 
     if (GITHUB_OUTPUT) {
-        Bun.file(GITHUB_OUTPUT).writer().write(`${name}=${variable}\n`);
+        await appendFile(GITHUB_OUTPUT, `${name}=${variable}\n`);
     }
 }
 
@@ -43,6 +44,6 @@ if (updated) {
     Bun.file(output).writer().write(render);
 }
 
-setOutput('release_tag_name', `${release.tag_name}`);
-setOutput('updated', `${updated}`);
-setOutput('output', `${output.pathname}`);
+await setOutput('release_tag_name', `${release.tag_name}`);
+await setOutput('updated', `${updated}`);
+await setOutput('output', `${output.pathname}`);
