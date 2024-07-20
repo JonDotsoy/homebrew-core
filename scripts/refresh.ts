@@ -45,4 +45,4 @@ if (updated) {
 
 setOutput('release_tag_name', `${release.tag_name}`);
 setOutput('updated', `${updated}`);
-setOutput('output', `${output}`);
+setOutput('output', `${output.pathname}`);
