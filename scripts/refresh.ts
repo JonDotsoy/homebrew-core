@@ -43,4 +43,6 @@ if (updated) {
     Bun.file(output).writer().write(render);
 }
 
+setOutput('release_tag_name', `${release.tag_name}`);
 setOutput('updated', `${updated}`);
+setOutput('output', `${output}`);
