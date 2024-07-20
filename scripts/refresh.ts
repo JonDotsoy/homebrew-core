@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 import { GhApi } from "./utils/gh-api";
-import { appendFile } from "node:fs/promises";
+import { appendFile, writeFile } from "node:fs/promises";
 import Handlebars from "handlebars";
 import { digestFile } from "./utils/digest-file-url";
 
@@ -41,7 +41,7 @@ const updated = renderHash !== outputHash
 
 if (updated) {
     console.log(`Write file ${output}`)
-    Bun.file(output).writer().write(render);
+    await writeFile(output, render);
 }
 
 await setOutput('release_tag_name', `${release.tag_name}`);
