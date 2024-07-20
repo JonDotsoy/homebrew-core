@@ -8,6 +8,9 @@ on:
           - JonDotsoy/q-project
         description: "describe the name of project to make the spec file"
 
+permissions:
+  contents: write
+
 jobs:
   das:
     runs-on: ubuntu-latest
@@ -24,7 +27,8 @@ jobs:
           git config --local user.name 'github-actions[bot]'
           git config --local user.email '41898282+github-actions[bot]@users.noreply.github.com'
         if: steps.refresh.outputs.updated == 'true'
-      - run: |
+      - if: steps.refresh.outputs.updated == 'true'
+        run: |
           git add ${{ steps.refresh.outputs.output }}
           git commit -m "chore: ${{ inputs.repo_name }} ${{ steps.refresh.outputs.release_tag_name }}"
           git push
