@@ -19,3 +19,4 @@ class Q < Formula
     system "false"
   end
 end
+
