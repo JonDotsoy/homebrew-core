@@ -8,6 +8,11 @@ on:
           - JonDotsoy/q-project
         description: "describe the name of project to make the spec file"
 
+      tag:
+        type: string
+        required: true
+        description: "Tag"
+
 permissions:
   contents: write
 
@@ -20,7 +25,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install
       - id: refresh
-        run: bun scripts/refresh.ts ${{ inputs.repo_name }}
+        run: bun scripts/refresh.ts ${{ inputs.repo_name }} ${{ inputs.tag }}
         env:
             GH_TOKEN: ${{ github.token }}
       - run: |

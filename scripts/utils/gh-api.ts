@@ -166,6 +166,8 @@ type A<T> = T extends [`/repos/${string}/${string}/releases`]
   ? { target_commitish: string; name: string; tarball_url: string }[]
   : T extends ['api', `/repos/${string}/releases/latest`]
   ? GhApi.Release
+  : T extends ['api', `/repos/${string}/releases/tags/${string}`]
+  ? GhApi.Release
   : T extends ['api', `/repos/${string}`]
   ? GhApi.Repo
   : any;

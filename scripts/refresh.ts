@@ -16,7 +16,7 @@ const setOutput = async (name: string, variable: string) => {
 
 const handlebars = Handlebars.create()
 
-const [_execPath, _scriptPath, repoName] = process.argv;
+const [_execPath, _scriptPath, repoName, tagVersion] = process.argv;
 
 const configPath = new URL(`./templates/${repoName}.json`, import.meta.url);
 const templatePath = new URL(`./templates/${repoName}.template`, import.meta.url);
@@ -27,7 +27,7 @@ const config = JSON.parse(await Bun.file(configPath).text());
 const ghApi = new GhApi({ cache: false });
 
 const repo = await ghApi.run('api', `/repos/${repoName}`).json()
-const release = await ghApi.run('api', `/repos/${repoName}/releases/latest`).json()
+const release = await ghApi.run('api', `/repos/${repoName}/releases/tags/${tagVersion}`).json()
 const digest = await digestFile(new URL(release.tarball_url));
 const output = new URL(config.output, configPath)
 const render = handlebars.compile(template, { noEscape: true })({ digest, config, repo, release })
