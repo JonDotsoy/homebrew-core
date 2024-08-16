@@ -1,10 +1,10 @@
 class Q < Formula
   desc "Conversational AI project for facilitating conversations using YAML files"
   homepage "https://github.com/JonDotsoy/q-project#readme"
-  url "https://api.github.com/repos/JonDotsoy/q-project/tarball/q-v0.5.0"
-  sha256 "523124216275f41f4b6e4aa2f7d4599d61e8c96e2902a7ba3a120c6565514869"
+  url "https://api.github.com/repos/JonDotsoy/q-project/tarball/q-v0.6.0"
+  sha256 "31e7c8afee3d2c7b751ba10fe1edf804a472c4f296d8f6ed3497a9a237f42502"
   license "MIT"
-  version "q-v0.5.0"
+  version "q-v0.6.0"
 
   depends_on "oven-sh/bun/bun"
   depends_on "make"
