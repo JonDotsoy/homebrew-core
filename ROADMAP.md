@@ -29,6 +29,7 @@ The following roadmap provides an overview of the planned features, their expect
 
 | Feature | Status | Expected Completion Date |
 | --- | --- | --- |
+| [Update Deployment States in Repository](#update-deployment-states-in-repository) | On Design | October 2024 |
 
 ## Proposals
 
@@ -39,3 +40,7 @@ The following proposal outlines a potential feature and its expected timeline:
 
 [Description]
 -->
+
+### Update Deployment States in Repository
+
+Update the deployment states in the deployments section of the original repository after generating the homebrew formula. This step ensures the information is up-to-date and accurately reflects the state of updates on the application.
