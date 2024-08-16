@@ -1,0 +1,24 @@
+class Roadmap < Formula
+  desc "{{ repo.description }}"
+  homepage "{{ repo.html_url }}#readme"
+  url "{{ release.tarball_url }}"
+  sha256 "{{ digest }}"
+  license "{{ repo.license.spdx_id }}"
+  version "{{ release.tag_name }}"
+
+  depends_on "oven-sh/bun/bun"
+  depends_on "make"
+  depends_on "jq"
+
+  def install
+    chdir "packages/cli" do
+        system "make", "install"
+        system "make", "build"
+        bin.install "dist/roadmap" => "roadmap"
+    end
+  end
+
+  test do
+    system "false"
+  end
+end
