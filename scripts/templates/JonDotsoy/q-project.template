@@ -1,4 +1,4 @@
-class Q < Formula
+class Cofy < Formula
   desc "{{ repo.description }}"
   homepage "{{ repo.html_url }}#readme"
   url "{{ release.tarball_url }}"
