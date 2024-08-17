@@ -6,6 +6,8 @@ class Q < Formula
   license "MIT"
   version "q-v0.7.0"
 
+  deprecate! date: "2020-01-01", because: "Replaced by Cofy. Install with `brew install jondotsoy/core/cofy`"
+
   depends_on "oven-sh/bun/bun"
   depends_on "make"
 

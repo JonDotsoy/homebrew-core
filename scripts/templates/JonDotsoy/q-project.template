@@ -12,7 +12,7 @@ class Cofy < Formula
   def install
     system "make", "install"
     system "make", "build"
-    bin.install "dist/q" => "q"
+    bin.install "dist/q" => "cofy"
   end
 
   test do
