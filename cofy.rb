@@ -1,4 +1,4 @@
-class Q < Formula
+class Cofy < Formula
   desc "Conversational AI project for facilitating conversations using YAML files"
   homepage "https://github.com/JonDotsoy/q-project#readme"
   url "https://api.github.com/repos/JonDotsoy/q-project/tarball/q-v0.7.0"
