@@ -5,7 +5,7 @@ on:
         type: choice
         required: true
         options:
-          - JonDotsoy/q-project
+          - JonDotsoy/cofy
           - JonDotsoy/ROADMAP.md
         description: "describe the name of project to make the spec file"
 
