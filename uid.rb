@@ -2,11 +2,12 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Uid < Formula
-  desc "Unique ID generator"
-  homepage "https://github.com/JonDotsoy/uid"
-  url "https://api.github.com/repos/JonDotsoy/uid/tarball/v1.4.1"
-  sha256 "ec3d8aa49e75d608c1b661f784593279be993abe6bd4b54ecb6473ebacc26f6b"
+  desc ""
+  homepage "https://github.com/JonDotsoy/uid#readme"
+  url "https://api.github.com/repos/JonDotsoy/uid/tarball/v1.5.0"
+  sha256 "87413f6479de927496899f4eb03c14ba16061a6094030d649443a7d68746499e"
   license "MIT"
+  version "v1.5.0"
 
   depends_on "bun"
 
