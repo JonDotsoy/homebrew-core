@@ -6,6 +6,7 @@ on:
         required: true
         options:
           - JonDotsoy/cofy
+          - JonDotsoy/uid
           - JonDotsoy/ROADMAP.md
         description: "describe the name of project to make the spec file"
 
