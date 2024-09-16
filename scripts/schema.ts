@@ -24,7 +24,7 @@ export const schema = object({
         username: string(),
         repository: string(),
         branch: string(),
-        workspace: string().startsWith('./').endsWith('/').optional(),
+        workspace: string().startsWith("./").endsWith("/").optional(),
       }),
       strategy: literal("lastCommit"),
     }),

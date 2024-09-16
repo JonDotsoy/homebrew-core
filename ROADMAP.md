@@ -16,7 +16,7 @@ The following roadmap provides an overview of the planned features, their expect
 -->
 
 | Feature | Expected Release Date |
-| --- | --- |
+| ------- | --------------------- |
 
 ### ⏳ Planned
 
@@ -27,9 +27,9 @@ The following roadmap provides an overview of the planned features, their expect
 | New Features Development | In Progress | April 30, 2023 |
 -->
 
-| Feature | Status | Expected Completion Date |
-| --- | --- | --- |
-| [Update Deployment States in Repository](#update-deployment-states-in-repository) | On Design | October 2024 |
+| Feature                                                                           | Status    | Expected Completion Date |
+| --------------------------------------------------------------------------------- | --------- | ------------------------ |
+| [Update Deployment States in Repository](#update-deployment-states-in-repository) | On Design | October 2024             |
 
 ## Proposals
 

@@ -59,12 +59,7 @@
                     ]
                   }
                 },
-                "required": [
-                  "type",
-                  "username",
-                  "repository",
-                  "branch"
-                ],
+                "required": ["type", "username", "repository", "branch"],
                 "additionalProperties": false
               },
               "strategy": {

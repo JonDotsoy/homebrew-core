@@ -1,0 +1,31 @@
+class Focus < Formula
+  desc "{{ repo.description }}"
+  homepage "{{ repo.html_url }}#readme"
+  url "{{ release.tarball_url }}"
+  sha256 "{{ digest }}"
+  license "{{ repo.license.spdx_id }}"
+  version "{{ release.tag_name }}"
+
+  depends_on "oven-sh/bun/bun"
+  depends_on "make"
+  depends_on "jq"
+
+  def install
+    system "make", "install"
+    system "make", "build"
+    bin.install "bin/focus" => "focus"
+    bin.install "bin/focusd" => "focusd"
+  end
+
+  test do
+    system "false"
+  end
+
+  service do
+    run [opt_bin/"focusd"]
+    keep_alive true
+    working_dir var
+    log_path var/"log/focusd.log"
+    error_log_path var/"log/focusd.log"
+  end
+end
