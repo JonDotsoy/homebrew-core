@@ -1,9 +1,9 @@
 class Ymake < Formula
   desc "Un ejecutor de tareas similar a Make pero con archivos YAML, con características modernas como builds matriciales y outputs estructurados"
   homepage "https://www.npmjs.com/package/@jondotsoy/ymake?activeTab=readme"
-  url "https://registry.npmjs.org/@jondotsoy/ymake/-/ymake-1.3.0.tgz"
-  sha256 "1999a25350de1e8e0cd8e3c5da33b44edecdf890ce7c818192f4d364b833a3e1"
-  version "1.3.0"
+  url "https://registry.npmjs.org/@jondotsoy/ymake/-/ymake-1.4.0.tgz"
+  sha256 "8dfc9dac013b46586a175c7b9843f187b986bf3a64d19de408e66c13119f4ada"
+  version "1.4.0"
 
   depends_on "oven-sh/bun/bun"
 
