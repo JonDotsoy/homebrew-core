@@ -26,9 +26,19 @@ Install: `brew install jondotsoy/core/ndate`
 
 Install: `brew install jondotsoy/core/uid`
 
-### Envctl
+### Envctl (Deprecated)
+
+(Note: This project has been deprecated and is no longer maintained)
 
 Install: `brew install jondotsoy/core/envctl`
+
+### Envs
+
+CLI that keeps the `.env` values of every git worktree in a single file (`.envs/values.yml`). Edit all values together and distribute them to each worktree, or collect them from the existing `.env` files.
+
+Install: `brew install jondotsoy/core/envs`
+
+Source: [@jondotsoy/envs](https://www.npmjs.com/package/@jondotsoy/envs) ([GitHub](https://github.com/JonDotsoy/envs#readme))
 
 ### Demo
 
