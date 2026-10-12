@@ -30,6 +30,14 @@ Install: `brew install jondotsoy/core/uid`
 
 Install: `brew install jondotsoy/core/envctl`
 
+### Envs
+
+CLI that keeps the `.env` values of every git worktree in a single file (`.envs/values.yml`). Edit all values together and distribute them to each worktree, or collect them from the existing `.env` files.
+
+Install: `brew install jondotsoy/core/envs`
+
+Source: [@jondotsoy/envs](https://www.npmjs.com/package/@jondotsoy/envs) ([GitHub](https://github.com/JonDotsoy/envs#readme))
+
 ### Demo
 
 Install: `brew install jondotsoy/demo/demo` (Note: This project is not part of the core and is hosted in a separate repository)
