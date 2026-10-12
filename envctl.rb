@@ -6,6 +6,8 @@ class Envctl < Formula
   license "MIT"
   version "v1.3.0"
 
+  deprecate! date: "2026-10-12", because: "is no longer maintained"
+
   depends_on "oven-sh/bun/bun"
   depends_on "make"
 

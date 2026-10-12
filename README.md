@@ -26,7 +26,9 @@ Install: `brew install jondotsoy/core/ndate`
 
 Install: `brew install jondotsoy/core/uid`
 
-### Envctl
+### Envctl (Deprecated)
+
+(Note: This project has been deprecated and is no longer maintained)
 
 Install: `brew install jondotsoy/core/envctl`
 
