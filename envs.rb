@@ -1,10 +1,10 @@
 class Envs < Formula
   desc "CLI that keeps the .env values of every git worktree in a single file"
   homepage "https://github.com/JonDotsoy/envs#readme"
-  url "https://registry.npmjs.org/@jondotsoy/envs/-/envs-0.1.10.tgz"
+  url "https://registry.npmjs.org/@jondotsoy/envs/-/envs-0.1.11.tgz"
   sha256 ""
   license "MIT"
-  version "0.1.10"
+  version "0.1.11"
 
   depends_on "oven-sh/bun/bun"
 
