@@ -1,8 +1,8 @@
 class Ndate < Formula
   desc "Date format to console"
   homepage "https://github.com/JonDotsoy/ndate#readme"
-  url "https://github.com/JonDotsoy/ndate/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "04fa2194cb0f82554a5b7658f2bc9bf986560572240f3e4ffa529c8e00aa79ee"
+  url "https://github.com/JonDotsoy/ndate/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "a787f99a5a2d87248b102c8a185e9ebcc201ed082740390d558217664e4f37e5"
   license "MIT"
 
   depends_on "deno"
