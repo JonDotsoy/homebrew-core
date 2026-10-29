@@ -7,8 +7,17 @@ class Ndate < Formula
 
   depends_on "deno"
 
+  # Self-contained bundle published as an asset of each ndate release.
+  # TODO: bump url/sha256 together with the main url once a release that
+  # ships ndate.js exists (sha256 of the released ndate.js).
+  resource "ndate.js" do
+    url "https://github.com/JonDotsoy/ndate/releases/download/v0.5.3/ndate.js"
+    sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  end
+
   def install
-    system "deno", "compile", "--allow-env=TZ,LANG", "--output", "ndate", "ndate.ts"
+    resource("ndate.js").stage buildpath
+    system "deno", "compile", "--allow-env=TZ,LANG", "--output", "ndate", "ndate.js"
     bin.install "ndate"
     bash_completion.install "completions/ndate.bash" => "ndate"
     zsh_completion.install "completions/ndate.zsh" => "_ndate"
