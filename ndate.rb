@@ -10,6 +10,10 @@ class Ndate < Formula
   def install
     system "deno", "compile", "--allow-env=TZ,LANG", "--output", "ndate", "ndate.ts"
     bin.install "ndate"
+
+    # Shell completions ship in the source tarball from the release after v0.5.1.
+    bash_completion.install "completions/ndate.bash" => "ndate" if File.exist?("completions/ndate.bash")
+    zsh_completion.install "completions/ndate.zsh" => "_ndate" if File.exist?("completions/ndate.zsh")
   end
 
   test do
