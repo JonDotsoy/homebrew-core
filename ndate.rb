@@ -17,13 +17,13 @@ class Ndate < Formula
     resource("ndate.js").stage buildpath
     system "deno", "compile", "--allow-env=TZ,LANG", "--output", "ndate", "ndate.js"
     bin.install "ndate"
-    bash_completion.install "completions/ndate.bash" => "ndate"
-    zsh_completion.install "completions/ndate.zsh" => "_ndate"
+    generate_completions_from_executable(bin/"ndate", "completion", shells: [:bash, :zsh, :fish])
   end
 
   test do
     assert_match "v#{version}", shell_output("#{bin}/ndate --version")
     assert_path_exists bash_completion/"ndate"
     assert_path_exists zsh_completion/"_ndate"
+    assert_path_exists fish_completion/"ndate.fish"
   end
 end
