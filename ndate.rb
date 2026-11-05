@@ -1,16 +1,16 @@
 class Ndate < Formula
   desc "Date format to console"
   homepage "https://github.com/JonDotsoy/ndate#readme"
-  url "https://github.com/JonDotsoy/ndate/archive/refs/tags/v0.5.8.tar.gz"
-  sha256 "88d893372a4cf04dc34636fe4ebba4a401e6538e5e587ab69dd954f3caaf8c47"
+  url "https://github.com/JonDotsoy/ndate/archive/refs/tags/v0.5.10.tar.gz"
+  sha256 "196cb1db95759190907a3097ad89548095daaee7612aecee4cd0fbe2d63f1390"
   license "MIT"
 
   depends_on "deno"
 
   # Self-contained bundle published as an asset of each ndate release.
   resource "ndate.js" do
-    url "https://github.com/JonDotsoy/ndate/releases/download/v0.5.8/ndate.js"
-    sha256 "5712dd96c1895df356e23b09fa21f62a4ea48632bd1a9286e04829df04ebbb2b"
+    url "https://github.com/JonDotsoy/ndate/releases/download/v0.5.10/ndate.js"
+    sha256 "eef67aef7430596203cad56326cc87a8152dbdc2e65cdbed83c6024b58e11d6d"
   end
 
   def install
